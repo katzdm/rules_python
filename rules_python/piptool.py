@@ -50,6 +50,7 @@ def extract_packages(package_names):
     # counterparts.
     sys.path[0:0] = dirs_to_add
     existing_pythonpath = os.environ.get('PYTHONPATH')
+    print("Existing path: %s" % existing_pythonpath)
     if existing_pythonpath:
         dirs_to_add.extend(existing_pythonpath.split(':'))
     os.environ['PYTHONPATH'] = ':'.join(dirs_to_add)
